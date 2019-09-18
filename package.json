@@ -23,12 +23,16 @@
   },
   "homepage": "https://github.com/kelvinkamau/Vibranium/#readme",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-connect": "^5.7.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^6.0.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify-es": "^1.0.4"
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "autoprefixer": "^9.4.10",
+    "babel-core": "6.26.3",
+    "babel-loader": "8.0.5",
+    "babel-plugin-transform-util-promisify": "^0.2.2",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.2.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "postcss-loader": "^3.0.0",
+    "webpack": "^3.4.1"
   }
 }
