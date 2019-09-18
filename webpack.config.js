@@ -2,7 +2,6 @@
 Okay folks, want to learn a little bit about webpack?
 */
 
-// eslint-disable-next-line prettier/prettier
 const path = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
