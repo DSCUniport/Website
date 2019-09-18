@@ -90,14 +90,12 @@ const config = {
     },
     externals: [
         nodeExternals(),
-        {
-        // require("jquery") is external and available
-        //  on the global var jQuery
-        "jquery": "jQuery",
-        '$':'jquery',
-        "pace": "pace",
-        
-      }
+    {
+        'pace':'pace',
+        $: 'jquery',
+        jQuery: 'jquery',
+        jquery: 'jquery',
+    }
     ],
 
     // remember we said webpack sees everthing as modules and how different loaders are responsible for different file types? Here is is where we implement them. Pass it the rules for our JS and our styles
@@ -107,9 +105,11 @@ const config = {
     // finally we pass it an array of our plugins - uncomment if you want to uglify
     //plugins: [uglify]
     plugins: [
+
         // here is where we tell it to output our css to a separate file
         // eslint-disable-next-line prettier/prettier
         new ExtractTextPlugin("custom.css"),
+        
     ],
 };
 // webpack is cranky about some packages using a soon to be deprecated API. shhhhhhh
