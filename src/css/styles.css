@@ -25,6 +25,11 @@ body {
   letter-spacing: -.3px;
 }
 
+.navbar-brand,
+img {
+  background: transparent !important;
+}
+
 .fa,
 .fab,
 .fas {
