@@ -306,7 +306,7 @@ p {
 }
 
 .btn-primary {
-  background: #3BC1FD;
+  background: #3BC1FD !important;
   color: #D7D7D7;
   ;
 }
@@ -314,7 +314,7 @@ p {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:visited {
-  background: #3BC1FD;
+  background: !important;
   color: #FFFFFF;
 }
 
