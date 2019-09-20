@@ -1351,6 +1351,7 @@ hr {
   height: 100px;
   max-width: 100px;
   max-height: 100px;
+  object-fit: cover;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
