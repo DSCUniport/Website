@@ -20,7 +20,7 @@ const javascript = {
     use: [
         {
             loader: "babel-loader",
-            options: {presets: ["@babel/preset-env"]}, // this is one way of passing options
+            options: { presets: ["@babel/preset-env"] }, // this is one way of passing options
         },
     ],
 };
@@ -29,7 +29,6 @@ const javascript = {
   This is our postCSS loader which gets fed into the next loader. 
   I'm setting it up in it's own variable because its a didgeridog
 */
-
 const postcss = {
     loader: "postcss-loader",
     options: {
@@ -68,7 +67,7 @@ const styles = {
 
 // We can also use plugins - this one will compress the crap out of our JS
 const uglify = new webpack.optimize.UglifyJsPlugin({ // eslint-disable-line
-    compress: {warnings: false},
+    compress: { warnings: false },
 });
 
 // OK - now it's time to put it all together
@@ -89,16 +88,15 @@ const config = {
         filename: "[name].bundle.js",
     },
     externals: [
-        nodeExternals(),
-    {
-        'pace':'pace',
-        $: 'jquery',
-        jQuery: 'jquery',
-        jquery: 'jquery',
-    }
+       // nodeExternals(),
+        {
+            'pace': 'pace',
+            '$': 'jquery',
+            jquery: 'jQuery',
+        }
     ],
 
-    // remember we said webpack sees everthing as modules and how different loaders are responsible for different file types? Here is is where we implement them. Pass it the rules for our JS and our styles
+    // remember we said webpack sees everything as modules and how different loaders are responsible for different file types? Here is is where we implement them. Pass it the rules for our JS and our styles
     module: {
         rules: [javascript, styles],
     },
@@ -109,7 +107,7 @@ const config = {
         // here is where we tell it to output our css to a separate file
         // eslint-disable-next-line prettier/prettier
         new ExtractTextPlugin("custom.css"),
-        
+
     ],
 };
 // webpack is cranky about some packages using a soon to be deprecated API. shhhhhhh
