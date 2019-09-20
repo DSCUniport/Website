@@ -2254,8 +2254,18 @@ hr {
   text-align: center;
 }
 
+.error {
+  padding: 2rem 0 0 1rem;
+}
+
+.error-text {
+  padding: 2rem 1rem;
+}
+
 .err-img {
   border-radius: 10%;
+  width: 100%;
+  margin: 2rem auto;
 }
 
 .err {
