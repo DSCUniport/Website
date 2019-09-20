@@ -1,6 +1,5 @@
 import "../css/custom.css";
-import $ from "jquery";
-import "../js/vendors/bootstrap.bundle.min.js";
+
 import "./vendors/hammer.js";
 import "../js/vendors/jquery.easing.min.js";
 import "./vendors/jquery.magnific-popup.min.js";
