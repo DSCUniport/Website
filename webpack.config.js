@@ -6,7 +6,6 @@ const path = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-const nodeExternals = require('webpack-node-externals');
 /*
   webpack sees every file as a module.
   How to handle those files is up to loaders.
