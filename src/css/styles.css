@@ -810,7 +810,8 @@ p {
   height: 100%;
   top: 50%;
   left: 50%;
-  color: #000;
+  color: #fff;
+  background: transparent !important;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   position: absolute;
@@ -821,7 +822,8 @@ p {
   height: 40px;
   border-radius: 50%;
   display: inline-block;
-  background: #2F5BE7;
+  background: #2F5BE7 !important;
+  color: #fff;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   position: absolute;
