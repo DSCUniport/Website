@@ -6,3 +6,5 @@ install:
   - npm install
 script:
   - npm run build
+  after_success:
+  - firebase deploy --project codeclubph --token $FIREBASE_TOKEN
