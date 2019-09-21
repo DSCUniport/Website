@@ -4,3 +4,5 @@ yarn-error*
 ./*.html
 yarn.lock
 package-lock.json
+firebase.json
+.travis.yml
