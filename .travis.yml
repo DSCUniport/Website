@@ -8,3 +8,6 @@ script:
   - npm run build
   after_success:
   - firebase deploy --project codeclubph --token $FIREBASE_TOKEN
+  deploy:
+  provider: firebase
+   token:"1/Db7mdJ3rnOqBYpk7lgss1J5kO4yPhqjry8YXxEqezGg"
