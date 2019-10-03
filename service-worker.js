@@ -1,62 +1,108 @@
-self.addEventListener('fetch', function (event) {
-    event.respondWith(caches.open('cache').then(function (cache) {
-        return cache.match(event.request).then(function (response) {
-            console.log("cache request: " + event.request.url);
-            var fetchPromise = fetch(event.request).then(function (networkResponse) {
-                console.log("fetch completed: " + event.request.url, networkResponse);
-                if (networkResponse) {
-                    console.debug("updated cached page: " + event.request.url, networkResponse);
-                    if (event.request.method === 'GET' && networkResponse.type === 'basic') {
-                        cache.put(event.request, networkResponse.clone());
-                    }
-                }
-                return networkResponse;
-            }, function (event) {
-                console.log("Error in fetch()", event);
-                event.waitUntil(
-                    caches.open('cache').then(function (cache) {
-                        return cache.addAll
-                        ([
-                            '/',
-                            '/index.html',
-                            '/index.html?homescreen=1',
-                            '/?homescreen=1',
-                            '/css/bootstrap.min.css',
-                            '/css/ionicons.min.css',
-                            '/css/magnific-popup.css',
-                            '/css/owl.carousel.min.css',
-                            '/css/responsive.css',
-                            '/css/styles.css',
-                            '/css/swiper.min.css',
-                            '/images/assets/events/fba.png',
-                            '/images/assets/events/fbw.png',
-                            '/images/assets/events/rpj.png',
-                            '/images/assets/diversity.png',
-                            '/images/assets/logo2.png',
-                            '/images/assets/team/avatar.png',
-                            '/images/assets/technologies/android.png',
-                            '/images/assets/technologies/cloud.png',
-                            '/images/assets/technologies/mi.png',
-                            '/images/assets/technologies/web.png',
-                            '/images/icon.png',
-                            '/js/custom.js',
-                            '/js/vendors/bootstrap.bundle.min.js',
-                            '/js/vendors/jquery.easing.min.js',
-                            '/js/vendors/jquery.magnific-popup.min.js',
-                            '/js/vendors/jquery.min.js',
-                            '/js/vendors/owl.carousel.min.js',
-                            '/js/vendors/swiper.min.js',
-                            '/service-worker.js',
-                            '/manifest.json',
-                        ]);
-                    })
-                );
-            });
-            return response || fetchPromise;
-        });
+const CACHE_NAME = 'CODE_CLUB_PH';
+const {INSTALL, FETCH} = {
+    INSTALL: 'install',
+    FETCH: 'fetch'
+}
+const  URLS_TO_CACHE = [
+    '/',
+    '/index.html',
+    '/learn.html',
+    '/index.html?homescreen=1',
+    '/?homescreen=1',
+    '/src/dist/custom.css',
+    '/src/images/assets/dsclogo.png',
+    '/src/images/assets/community.svg',
+    '/src/images/assets/technologies/android.svg',
+    '/src/images/assets/technologies/web.svg',
+    '/src/images/assets/technologies/cloud.png',
+    '/src/images/assets/technologies/mi.png',
+    '/src/images/assets/team/debbie.jpeg',
+    '/src/images/assets/team/ray_erica.jpeg',
+    '/src/images/assets/team/benjamin.jpg',
+    '/src/images/assets/team/obinna.jpeg',
+    '/src/images/assets/team/kelvin_gobo.jpeg',
+    'src/images/assets/team/vinebo_derek.jpeg',
+    'src/dist/App.bundle.js',
+    '/service-worker.js',
+    '/manifest.json',
+]
+
+const preLoad = async () => {
+    console.log("Installing web app");
+    try {
+        const cache = await caches.open(CACHE_NAME)
+        const cachedUrls = cache.addAll(URLS_TO_CACHE);
+        return cachedUrls
+    }
+    catch (error) {
+        console.error(error)
+    }
+};
+  
+self.addEventListener(FETCH, event => {
+    event.respondWith(makeNetWorkRequest(event.request).catch(() => {
+        return returnFromCache(event.request);
     }));
+    event.waitUntil(addToCache(event.request));
 });
-self.addEventListener('install', function (event) {
-    self.skipWaiting();
-    console.log("Latest version installed!");
+  
+const makeNetWorkRequest = (request) => (
+    new Promise( async (resolve, reject) => {
+        try {
+            const networkFetchResponse = await fetch(request)
+            console.log("fetch completed: ",request, networkFetchResponse)
+            if(networkFetchResponse.status !== 404) {
+                resolve(networkFetchResponse);
+            } 
+            else {
+               throw new Error('no resource found')
+            }
+        }
+        catch (error) {
+            console.log(error)
+            reject(error);
+        }
+    })
+
+)
+
+const addToCache = async (request) => {
+    try {
+        const cache = await caches.open(CACHE_NAME)
+        const networkFetchResponse = await fetch(request)
+        
+        if (request.method === 'GET' && networkFetchResponse.type === 'basic') {
+            console.debug("updated cached page: " + request.url, networkFetchResponse);
+            return cache.put(request, networkFetchResponse.clone());
+        }
+    }
+    catch (error) {
+        console.error(error)
+    }
+}
+    
+
+const returnFromCache = async (request) => {
+    try {
+        const cache = await caches.open(CACHE_NAME)
+        const cacheItemMatchingNetworkRequest = await cache.match(request)
+        if(!cacheItemMatchingNetworkRequest || cacheItemMatchingNetworkRequest.status == 404) {
+            console.log(cacheItemMatchingNetworkRequest)
+            return cache.match("offline.html");
+        } 
+        else {
+            return cacheItemMatchingNetworkRequest;
+        }
+    }   
+    catch (error) {
+        console.error(error)
+    }
+};
+
+
+self.addEventListener(INSTALL, event => {
+    self.skipWaiting()
+    event.waitUntil(preLoad());
+    console.log('installed latest version')
 });
+  
