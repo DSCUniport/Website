@@ -3,29 +3,7 @@ const {INSTALL, FETCH} = {
     INSTALL: 'install',
     FETCH: 'fetch'
 }
-const  URLS_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/learn.html',
-    '/index.html?homescreen=1',
-    '/?homescreen=1',
-    '/src/dist/custom.css',
-    '/src/images/assets/dsclogo.png',
-    '/src/images/assets/community.svg',
-    '/src/images/assets/technologies/android.svg',
-    '/src/images/assets/technologies/web.svg',
-    '/src/images/assets/technologies/cloud.png',
-    '/src/images/assets/technologies/mi.png',
-    '/src/images/assets/team/debbie.jpeg',
-    '/src/images/assets/team/ray_erica.jpeg',
-    '/src/images/assets/team/benjamin.jpg',
-    '/src/images/assets/team/obinna.jpeg',
-    '/src/images/assets/team/kelvin_gobo.jpeg',
-    'src/images/assets/team/vinebo_derek.jpeg',
-    'src/dist/App.bundle.js',
-    '/service-worker.js',
-    '/manifest.json',
-]
+const  URLS_TO_CACHE = [ '/', './index.html']
 
 
 self.addEventListener(INSTALL, event => {
