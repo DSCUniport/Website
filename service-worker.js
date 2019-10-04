@@ -3,7 +3,7 @@ const {INSTALL, FETCH} = {
     INSTALL: 'install',
     FETCH: 'fetch'
 }
-const  URLS_TO_CACHE = [ '/', './index.html']
+const  URLS_TO_CACHE = [ '/', './index.html', './learn.html']
 
 
 self.addEventListener(INSTALL, event => {
