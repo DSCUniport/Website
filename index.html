@@ -880,11 +880,6 @@
         iframeObserver.observe(img);
         });
 
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('beforeinstallprompt fired index')
-        })
-
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function () {
                 navigator.serviceWorker.register('service-worker.js')
