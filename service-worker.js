@@ -27,6 +27,14 @@ const  URLS_TO_CACHE = [
     '/manifest.json',
 ]
 
+
+self.addEventListener(INSTALL, event => {
+    self.skipWaiting()
+    event.waitUntil(preLoad());
+    console.log('installed latest version')
+});
+  
+
 const preLoad = async () => {
     console.log("Installing web app");
     try {
@@ -50,7 +58,6 @@ const makeNetWorkRequest = (request) => (
     new Promise( async (resolve, reject) => {
         try {
             const networkFetchResponse = await fetch(request)
-            console.log("fetch completed: ",request, networkFetchResponse)
             if(networkFetchResponse.status !== 404) {
                 resolve(networkFetchResponse);
             } 
@@ -59,7 +66,7 @@ const makeNetWorkRequest = (request) => (
             }
         }
         catch (error) {
-            console.log(error)
+            console.error(error)
             reject(error);
         }
     })
@@ -72,7 +79,6 @@ const addToCache = async (request) => {
         const networkFetchResponse = await fetch(request)
         
         if (request.method === 'GET' && networkFetchResponse.type === 'basic') {
-            console.debug("updated cached page: " + request.url, networkFetchResponse);
             return cache.put(request, networkFetchResponse.clone());
         }
     }
@@ -87,7 +93,6 @@ const returnFromCache = async (request) => {
         const cache = await caches.open(CACHE_NAME)
         const cacheItemMatchingNetworkRequest = await cache.match(request)
         if(!cacheItemMatchingNetworkRequest || cacheItemMatchingNetworkRequest.status == 404) {
-            console.log(cacheItemMatchingNetworkRequest)
             return cache.match("offline.html");
         } 
         else {
@@ -99,10 +104,3 @@ const returnFromCache = async (request) => {
     }
 };
 
-
-self.addEventListener(INSTALL, event => {
-    self.skipWaiting()
-    event.waitUntil(preLoad());
-    console.log('installed latest version')
-});
-  
