@@ -44,15 +44,8 @@ This awesome Progressive Web App was created for Developer Student Clubs in Sub 
 * Add project from firebase console using ```firebase -add project-name```
 * Publish ```firebase deploy```
 
-## Improvements<p align="center">
-<img width="300" height="140" alt="Code club PH" src="https://res.cloudinary.com/simplytammy/image/upload/v1570479884/dsclogo.png">
-</p>
-
-
-* <s>Mobile site enhancements</s> ✔
-* <s>Add tutorials page</s> ✔
-* <s>Add projects showcase page</s> ✔
-* <s>Progressive Web App support</s> ✔
+## Improvements
+* <p>Progressive Web App support</p> ✔
 ```
 
 ## Contributing
