@@ -2,7 +2,7 @@
 <img width="300" height="140" alt="Code club PH" src="https://res.cloudinary.com/simplytammy/image/upload/v1570479884/dsclogo.png">
 </p>
 
-# Vibranium Codeclub PH 🔥
+# Vibranium, Codeclub PH 🔥
 This awesome Progressive Web App was created for Developer Student Clubs in Sub Saharan Africa as a profile and a platform to showcase what they're upto in events, outreach to local businesses and showcases and most importantly their success stories to the world.
 
 
@@ -46,7 +46,6 @@ This awesome Progressive Web App was created for Developer Student Clubs in Sub 
 
 ## Improvements
 * <p>Progressive Web App support</p> ✔
-```
 
 ## Contributing
 Project Vibranium is an open source software project and I encourage developers to contribute patches and code for us to include in the main package of Project Vibranium. All contributions will be fully credited.
@@ -73,7 +72,7 @@ Project Vibranium is an open source software project and I encourage developers 
 | DSC IBBUL | Nigeria | [Live Here](https://dscibbul.club) |
 
 ## License
-```
+
 Copyright (c) 2018 Project Vibranium 🔥
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,7 +92,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
 
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkelvinkamau%2FVibranium.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkelvinkamau%2FVibranium?ref=badge_large)
