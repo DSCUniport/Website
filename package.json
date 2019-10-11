@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -w --display-max-modules 0",
-    "build": "webpack",
+    "build": "webpack --display-max-modules 0",
     "deploy": "now --token=$NOW_TOKEN"
   },
   "repository": {

@@ -3,9 +3,31 @@
     "name": "codeclubph",
 	"builds": [
         { "src": "*.html", "use": "@now/static" },
+        { "src": "*.json", "use": "@now/static" },
+        { "src": "*.js", "use": "@now/static" },
         {
             "src": "src/**/*",
             "use": "@now/static"
         }
-    ]
+    ],
+    "routes": [
+        {
+            "src": "/(src/.+|.+\\.css|.+\\.js|.+\\.json)",
+            "headers": { "cache-control": "max-age=31536000" },
+            "dest": "/$1"
+          },
+        {
+          "src": "/(.*).html",
+          "headers": { "cache-control": "public,max-age=0, must-revalidate" },
+          "dest": "/$1.html"
+        }
+
+    ],
+    "public": true, 
+
+    "github": {
+        "enabled": false
+      },
+      "regions": ["bru"]
+
 }

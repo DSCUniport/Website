@@ -939,15 +939,22 @@
         document.querySelectorAll('iframe[data-urllink]').forEach(img => {
             iframeObserver.observe(img);
         });
-
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(function () {
-                        console.log("Service Worker Registered,");
-                    });
-            });
+    </script>  
+    <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("[PWA Builder] active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+                .register("service-worker.js", {
+                    scope: "./",
+                })
+                .then(function(reg) {
+                    console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+                });
         }
+    }
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
