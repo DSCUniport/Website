@@ -1,4 +1,6 @@
 {
+    "version": 2,
+    "name": "codeclubph",
 	"builds": [
         { "src": "*.html", "use": "@now/static" },
         {
