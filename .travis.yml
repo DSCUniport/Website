@@ -10,6 +10,5 @@ before_script:
 script:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
   - npm run build
 
-if: branch = master
 after_success:
-  - npm run deploy
+   - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; npm run deploy; fi
