@@ -5,4 +5,4 @@ yarn-error*
 yarn.lock
 package-lock.json
 firebase.json
-.travis.yml
+travis.log
