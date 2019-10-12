@@ -1,27 +1,29 @@
 {
-  "name": "vibranium",
+  "name": "CodeClubPh",
   "version": "1.0.0",
   "description": "Website for DSC SubSaharan Africa",
-  "main": "gulpfile.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -w --display-max-modules 0",
-    "dev": "npx gulp watch"
+    "build": "webpack --display-max-modules 0",
+    "deploy": "now --token=$NOW_TOKEN"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kelvinkamau/Vibranium.git"
+    "url": "https://github.com/CodeClubPh/codeclubph.git"
   },
   "keywords": [
     "dsc",
-    "unilag"
+    "uniport",
+    "google"
   ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kelvinkamau/Vibranium/issues"
+    "url": "https://github.com/CodeClubPh/codeclubph/issues"
   },
-  "homepage": "https://github.com/kelvinkamau/Vibranium/#readme",
+  "homepage": "https://github.com/CodeClubPh/codeclubph/#readme",
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
@@ -32,6 +34,7 @@
     "babel-preset-env": "^1.7.0",
     "css-loader": "^3.2.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "now": "^16.3.1",
     "postcss-loader": "^3.0.0",
     "webpack": "^3.4.1",
     "webpack-node-externals": "^1.7.2"

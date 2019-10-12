@@ -1,8 +1,8 @@
 <p align="center">
-<img width="300" height="140" alt="Vibranium" src="https://github.com/kelvinkamau/Vibranium/blob/master/src/images/vibranium.png">
+<img width="300" height="140" alt="Code club PH" src="https://res.cloudinary.com/simplytammy/image/upload/v1570479884/dsclogo.png">
 </p>
 
-# Project Vibranium 🔥
+# Vibranium, Codeclub PH 🔥
 This awesome Progressive Web App was created for Developer Student Clubs in Sub Saharan Africa as a profile and a platform to showcase what they're upto in events, outreach to local businesses and showcases and most importantly their success stories to the world.
 
 
@@ -12,11 +12,6 @@ This awesome Progressive Web App was created for Developer Student Clubs in Sub 
 ![](https://img.shields.io/github/issues/kelvinkamau/Vibranium.svg)
 ![](https://img.shields.io/maintenance/yes/2019.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9ec27af46e31459f9c11a4c1f5ff6f71)](https://www.codacy.com/app/kamaucodes/Vibranium?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kelvinkamau/Vibranium&amp;utm_campaign=Badge_Grade)
-
-| Name | Source Code| Demo |
-| --- | --- | --- |
-| Dark Theme | [GitHub](https://github.com/kelvinkamau/vibranium-dark) | [Preview](https://devclub-kisii.firebaseapp.com) |
-|Light Theme | [GitHub](https://github.com/kelvinkamau/Vibranium) | [Preview](kelvinkamau.github.io/Vibranium) |
 
 ## Creators 👨‍💻
 * [DSC Sub Saharan Africa Leads](https://github.com/DSCLEADSAfrica)
@@ -31,42 +26,26 @@ This awesome Progressive Web App was created for Developer Student Clubs in Sub 
 # Running it locally 🔩
 * You might need to have [NPM](https://nodejs.org/en/download/) or [yarn](https://yarnpkg.com/en/docs/install)
 * In the project directory, run `npm install` or `yarn install` depending on which you have
-* Then run `npm run dev` and open your browser to `http://localhost:8080` to start working on the project
-* To build the project run `npm run build`
+* Install VS Code Live server extension by clicking this [link](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) or run `npm i -g live-server`
+* Then run `npm i -g webpack@3.4.1`
+* Activate live server from VS Code or open the app directory and run `live-server`
 
 ### Firebase Hosting
 * Install Node.js (v8.9.4 or above)
 * launch command prompt/terminal 
-* ```cd documents```
-* ```git clone https://github.com/kelvinkamau/Vibranium```
-* ```cd Vibranium```
+* ```cd path-to-app```
+* ```git clone https://github.com/CodeClubPh/codeclubph```
+* ```cd codeclubph```
 * Install project dependencies: ```npm install or yarn```
 * Install Firebase CLI: ```npm i -g firebase-tools```or  ```yarn global add firebase-tools```
 * Create a new firebase project [here](https://console.firebase.google.com/)
 * Login into Firebase CLI: ```firebase login```
 * Type ```firebase init``` to create a firebase.json
-* Copy the static files (JS,CSS, Assets folders,index.html file) into a newly created 'Y' or 'N' folder
 * Add project from firebase console using ```firebase -add project-name```
 * Publish ```firebase deploy```
 
 ## Improvements
-
-* <s>Mobile site enhancements</s> ✔
-* <s>Add tutorials page</s> ✔
-* <s>Add projects showcase page</s> ✔
-* <s>Progressive Web App support</s> ✔
-* Push notifications support 📢
-
-## Updating
-Here is a git workflow for updating your fork (or downloaded copy) to the latest version:
-```git
-git remote add upstream https://github.com/kelvinkamau/Vibranium.git
-git fetch upstream
-git merge upstream/Vibranium
-# resolve the merge conflicts in your editor
-git add . -u
-git commit -m 'Updated to the latest version'
-```
+* <p>Progressive Web App support</p> ✔
 
 ## Contributing
 Project Vibranium is an open source software project and I encourage developers to contribute patches and code for us to include in the main package of Project Vibranium. All contributions will be fully credited.
@@ -78,8 +57,6 @@ Project Vibranium is an open source software project and I encourage developers 
 * For bug reports ensure you have a reproducible test case
     * A pull request with a breaking test would be super preferable here but isn't required
 
-## Versioning
-This project uses [semver](https://semver.org) for versioning. Current version: v2.0.0
 
 ## Websites using Project Vibranium
 
@@ -95,7 +72,7 @@ This project uses [semver](https://semver.org) for versioning. Current version: 
 | DSC IBBUL | Nigeria | [Live Here](https://dscibbul.club) |
 
 ## License
-```
+
 Copyright (c) 2018 Project Vibranium 🔥
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -115,7 +92,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
 
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkelvinkamau%2FVibranium.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkelvinkamau%2FVibranium?ref=badge_large)
