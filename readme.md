@@ -1,7 +1,7 @@
 <p align="center"><img width="300" height="140" alt="Code club PH" src="https://res.cloudinary.com/simplytammy/image/upload/v1570479884/dsclogo.png">
 </p>
 
-# Vibranium, Codeclub PH 🔥
+# Vibranium🔥
 
 This awesome Progressive Web App was created for Developer Student Clubs in Sub Saharan Africa as a profile and a platform to showcase what they're upto in events, outreach to local businesses and showcases and most importantly their success stories to the world.
 
@@ -47,7 +47,8 @@ This awesome Progressive Web App was created for Developer Student Clubs in Sub 
 
 ## Improvements
 
-* <p>Progressive Web App support</p> ✔
+<p>Progressive Web App support </p>
+<p>Click to install PWA </p> 
 
 ## Contributing
 
