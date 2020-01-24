@@ -47,8 +47,8 @@ This awesome Progressive Web App was created for Developer Student Clubs in Sub 
 
 ## Improvements
 
-*<p>Progressive Web App support</p> ✓
-*<p>Click to install PWA </p> ✓
+<p>Progressive Web App support </p>
+<p>Click to install PWA </p> 
 
 ## Contributing
 
