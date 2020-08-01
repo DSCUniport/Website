@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -w --display-max-modules 0",
+    "build": "webpack --display-max-modules 0",
+    "deploy": "now --token=$NOW_TOKEN"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "babel-preset-env": "^1.7.0",
     "css-loader": "^3.2.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "now": "^16.3.1",
     "postcss-loader": "^3.0.0",
     "webpack": "^3.4.1",
     "webpack-node-externals": "^1.7.2"

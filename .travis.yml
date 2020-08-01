@@ -1,12 +1,14 @@
-language: node_js
 sudo: false
+language: node_js
 node_js:
-  - 11
-install:
+  - "10"
+notifications:
+  email: false 
+
+before_script:
   - npm install
-script:
+script:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
   - npm run build
-  deploy:
-    provider: firebase
-    token:""
-    edge: true
+
+after_success:
+   - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run deploy; fi

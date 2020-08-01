@@ -1,3 +1,4 @@
+
 self.addEventListener('fetch',  (event) =>{
     event.respondWith(caches.open('cache').then(function (cache) {
         return cache.match(event.request).then(function (response) {
@@ -54,6 +55,36 @@ self.addEventListener('fetch',  (event) =>{
             });
             return response || fetchPromise;
         });
+const CACHE_NAME = 'CODE_CLUB_PH';
+const {INSTALL, FETCH} = {
+    INSTALL: 'install',
+    FETCH: 'fetch'
+}
+const  URLS_TO_CACHE = [ '/', './index.html', './learn.html']
+
+
+self.addEventListener(INSTALL, event => {
+    self.skipWaiting()
+    event.waitUntil(preLoad());
+    console.log('installed latest version')
+});
+  
+
+const preLoad = async () => {
+    console.log("Installing web app");
+    try {
+        const cache = await caches.open(CACHE_NAME)
+        const cachedUrls = cache.addAll(URLS_TO_CACHE);
+        return cachedUrls
+    }
+    catch (error) {
+        console.error(error)
+    }
+};
+  
+self.addEventListener(FETCH, event => {
+    event.respondWith(makeNetWorkRequest(event.request).catch(() => {
+        return returnFromCache(event.request);
     }));
 });
 self.addEventListener('install',  (event) => {

@@ -2,9 +2,8 @@
   "background_color": "#0A192F",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#0A192F",
-  "short_name": "DSC Kisii",
-  "name": "DSC Kisii University",
+  "short_name": "DSC Uniport",
+  "name": "DSC University Of Port-Harcourt",
   "description": "Developer Student Clubs is a Google Developers program for university students to learn mobile and web development skills",
   "lang": "en-US",
   "icons": [
