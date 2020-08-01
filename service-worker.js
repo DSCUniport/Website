@@ -1,4 +1,4 @@
-self.addEventListener('fetch', function (event) {
+self.addEventListener('fetch',  (event) =>{
     event.respondWith(caches.open('cache').then(function (cache) {
         return cache.match(event.request).then(function (response) {
             console.log("cache request: " + event.request.url);
@@ -56,7 +56,7 @@ self.addEventListener('fetch', function (event) {
         });
     }));
 });
-self.addEventListener('install', function (event) {
+self.addEventListener('install',  (event) => {
     self.skipWaiting();
     console.log("Latest version installed!");
 });
