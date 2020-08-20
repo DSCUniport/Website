@@ -122,9 +122,11 @@ p {
   .lead {
     font-size: 16px;
   }
+
   .vanish {
     display: none;
   }
+
   .zuri {
     text-align: left;
     line-height: 1.5;
@@ -314,7 +316,7 @@ p {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:visited {
-  background: !important;
+  background:  !important;
   color: #FFFFFF;
 }
 
@@ -530,8 +532,8 @@ p {
 
 .event-card,
 .project-card {
-  -webkit-box-shadow: 0 0 15px rgba(99, 114, 130, 0.3);
-  box-shadow: 0 0 15px rgba(99, 114, 130, 0.3);
+  /*  -webkit-box-shadow: 0 0 15px rgba(99, 114, 130, 0.15);
+  box-shadow: 0 0 15px rgba(99, 114, 130, 0.15);*/
   border-radius: 5px;
   margin: 0 auto 20px;
 }
@@ -636,8 +638,8 @@ p {
 }
 
 .feature-card {
-  -webkit-box-shadow: 0 0 15px rgba(99, 114, 130, 0.3);
-  box-shadow: 0 0 15px rgba(99, 114, 130, 0.3);
+  -webkit-box-shadow: 0 0 15px rgba(99, 114, 130, 0.15);
+  box-shadow: 0 0 15px rgba(99, 114, 130, 0.15);
   margin-bottom: 30px;
   padding: 25px 30px;
   border-radius: 5px;
@@ -1232,11 +1234,13 @@ hr {
 }
 
 @media (min-width: 240px) and (max-width: 768px) {
+
   .carousel-control-next,
   .carousel-control-prev {
     width: 15%;
     height: 10%;
   }
+
   .carousel-control-next-i,
   .carousel-control-prev-i {
     position: relative;
@@ -1256,23 +1260,27 @@ hr {
 }
 
 @media (min-width: 768px) {
+
   /* show 3 items */
   .carouselPrograms .carousel-inner .active,
-  .carouselPrograms .carousel-inner .active + .carousel-item,
-  .carouselPrograms .carousel-inner .active + .carousel-item + .carousel-item {
+  .carouselPrograms .carousel-inner .active+.carousel-item,
+  .carouselPrograms .carousel-inner .active+.carousel-item+.carousel-item {
     display: block;
   }
+
   .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-  .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-  .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+  .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item,
+  .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item {
     transition: none;
   }
+
   .carouselPrograms .carousel-inner .carousel-item-next,
   .carouselPrograms .carousel-inner .carousel-item-prev {
     position: relative;
     right: 300px;
     transform: translate3d(0, 0, 0);
   }
+
   .carousel-control-next-i,
   .carousel-control-prev-i {
     position: relative;
@@ -1287,7 +1295,8 @@ hr {
     -moz-border-radius: 50%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
-  .carouselPrograms .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+
+  .carouselPrograms .carousel-inner .active.carousel-item+.carousel-item+.carousel-item+.carousel-item {
     position: absolute;
     top: 0;
     right: -33.333%;
@@ -1295,15 +1304,17 @@ hr {
     display: block;
     visibility: visible;
   }
+
   /* left or forward direction */
-  .carouselPrograms .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-  .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item,
-  .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-  .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+  .carouselPrograms .active.carousel-item-left+.carousel-item-next.carousel-item-left,
+  .carouselPrograms .carousel-item-next.carousel-item-left+.carousel-item,
+  .carouselPrograms .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item,
+  .carouselPrograms .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item {
     position: relative;
     transform: translate3d(-100%, 0, 0);
     visibility: visible;
   }
+
   /* farthest right hidden item must be abso position for animations */
   .carouselPrograms .carousel-inner .carousel-item-prev.carousel-item-right {
     position: absolute;
@@ -1313,11 +1324,12 @@ hr {
     display: block;
     visibility: visible;
   }
+
   /* right or prev direction */
-  .carouselPrograms .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-  .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item,
-  .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-  .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+  .carouselPrograms .active.carousel-item-right+.carousel-item-prev.carousel-item-right,
+  .carouselPrograms .carousel-item-prev.carousel-item-right+.carousel-item,
+  .carouselPrograms .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item,
+  .carouselPrograms .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item {
     position: relative;
     transform: translate3d(100%, 0, 0);
     visibility: visible;
